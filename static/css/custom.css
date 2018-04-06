@@ -1,0 +1,98 @@
+.navbar-brand{
+	font-family: 'EB Garamond', serif;
+    margin-top: 10px;
+	font-size: 30px;
+	}
+
+#home {
+	background-image: url('img/wallpaper.jpg');
+	background-size: cover;
+}
+
+#flag{
+    width: 40px;
+    height:40px;
+    margin-top: 10px;
+    margin-right: 5px;
+    float: left;
+}
+
+#tourButton{
+    margin-left: 500px;
+    margin-top: 10px;
+
+}
+
+#year-chart{
+    position: relative;
+    background-color: #fff;
+
+}
+
+.chart-wrapper{
+    background-color: #ffffb3;
+}
+
+
+
+.row {
+    margin: 10px;
+}
+
+
+#total-fish-name {
+   font-size: 60px;
+}
+
+#total-fish-value {
+   font-size: 40px;
+}
+
+#total-fish-quantity {
+   font-size: 40px;
+}
+
+
+.dc-chart g.row text {
+   fill: black;
+   font-size: 12px;
+}
+
+
+.dc-select-menu {
+   background: #33CC99;
+   width: 80%;
+   border: none;
+   position: relative;
+   height: 31px;
+   font-size: 15px;
+   color: white;
+   vertical-align: middle;
+   text-align: center;
+   padding-top: 4px;
+   padding-bottom: 0px;
+
+}
+
+#modelButton{
+
+    margin-left: 20px;
+    }
+
+#fish{
+    width: 50px;
+    height: 50px;
+    position: relative;
+    -webkit-animation: moveFish 5s infinite;
+    -webkit-animation-direction: normal;
+    animation: moveFish 5s infinite;
+    animation-direction:normal;
+}
+
+@-webkit-keyframes moveFish {
+    0%   {left: 700px; bottom: 0px;}
+    25%  {left: 400px; bottom: 50px;}
+    50%  {left: 200px; bottom: -30px;}
+    75%  {left: 100px; bottom: 50px;}
+    100% {left: 0px; bottom: -30px;}
+}

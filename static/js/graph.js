@@ -1,5 +1,5 @@
 queue()
-    .defer(d3.json, "/fishingUK/project2")  //get data from hosted API (flask)
+    .defer(d3.json, "/fishingUK/projects")  //get data from hosted API (flask)
     .await(makeGraphs);
 
 function makeGraphs(error, fishingUKProject) {

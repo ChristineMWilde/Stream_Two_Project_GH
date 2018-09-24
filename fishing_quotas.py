@@ -12,8 +12,8 @@ app = Flask(__name__)
 #COLLECTION_NAME = 'projects'
 #need to update fishing_quotas.py with the mongo URI
 
-MONGO_URI = os.getenv('mongodb://<dbuser>:<dbpassword>@ds149134.mlab.com:49134/heroku_6c7ft11f', 'mongodb://localhost:27017')
-DBS_NAME = os.getenv('heroku_6c7ft11f', 'fishingUK')
+MONGO_URI = os.getenv('MONGO_URI', 'mongodb://localhost:27017')
+DBS_NAME = os.getenv('MONGO_DB_NAME', 'fishingUK')
 COLLECTION_NAME = 'projects'
 
 

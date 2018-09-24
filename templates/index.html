@@ -1,178 +1,175 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <title>Fishing Quotas Dashboard</title>
-  <link rel="stylesheet" href="{{ url_for ('static', filename='lib/css/bootstrap.min.css')}}">
-  <link rel="stylesheet" href="{{ url_for ('static', filename='lib/css/keen-dashboards.css')}}">
-  <link rel="stylesheet" href="{{ url_for ('static', filename='lib/css/dc.css')}}">
-  <link rel="stylesheet" href="{{ url_for ('static', filename='css/custom.css')}}">
-  <link rel="stylesheet" href="{{url_for ('static', filename='lib/css/introjs.css')}}" />
-  <link href="https://fonts.googleapis.com/css?family=EB+Garamond" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Dosis|Lobster" rel="stylesheet">
+    <title>Fishing Quotas Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for ('static', filename='lib/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for ('static', filename='lib/css/keen-dashboards.css')}}">
+    <link rel="stylesheet" href="{{ url_for ('static', filename='lib/css/dc.css')}}">
+    <link rel="stylesheet" href="{{ url_for ('static', filename='css/custom.css')}}">
+    <link rel="stylesheet" href="{{url_for ('static', filename='lib/css/introjs.css')}}" />
+    <link href="https://fonts.googleapis.com/css?family=EB+Garamond" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis|Lobster" rel="stylesheet">
 </head>
 
 <body class="application" id="home">
-  <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <img src="/static/css/img/flag.jpg" id="flag" alt="UK flag">
-        <a class="navbar-brand" href="./">UK Fishing Quotas Dashboard</a>
-          <button type="button" id="tourButton" class="btn btn-warning" autofocus onclick="javascript:introJs().start();">Take a tour of the fishing dashboard</button>
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <img src="/static/css/img/flag.jpg" id="flag" alt="UK flag">
+                <a class="navbar-brand" href="./">UK Fishing Quotas Dashboard</a>
+                <button type="button" id="tourButton" class="btn btn-warning" autofocus onclick="javascript:introJs().start();">Take a tour of the fishing dashboard</button>
 
-      </div>
+            </div>
+        </div>
     </div>
-  </div>
 
-<div  id="outer" class="container-fluid">
-     <div class="row">
-      <div class="col-sm-12">
+    <div id="outer" class="container-fluid">
         <div class="row">
-            <!-- lineChart for years -->
             <div class="col-sm-12">
-              <div class="chart-wrapper" data-step="1" data-intro="This shows the amount of fish the UK has hauled in over the past 5 years. From the data we can see that the UK has small peaks and troughs but in general the landings have been consistent &#9925;" style="" data-position="right">
-                <div class="chart-title" style="color:blue; font-family: 'Dosis', sans-serif;">
-                Amount of fish types through the years
-              </div>
+                <div class="row">
+                    <!-- lineChart for years -->
+                    <div class="col-sm-12">
+                        <div class="chart-wrapper" data-step="1" data-intro="This shows the amount of fish the UK has hauled in over the past 5 years. From the data we can see that the UK has small peaks and troughs but in general the landings have been consistent &#9925;" style="" data-position="right">
+                            <div class="chart-title" style="color:blue; font-family: 'Dosis', sans-serif;">
+                                Amount of fish types through the years
+                            </div>
 
-              <div class="chart-stage">
-                <div id="year-chart"></div>
-              </div>
+                            <div class="chart-stage">
+                                <div id="year-chart"></div>
+                            </div>
 
-              </div>
-            </div>
-            </div>
-          </div>
-        </div>
-          <!-- lineChart -->
-
-<div class="row">
-      <div class="col-sm-12">
-        <div class="row">
-                <!-- pieChart for regions -->
-          <div class="col-sm-4">
-            <div class="chart-wrapper" data-step="2" data-intro= "England, Scotland, Wales and Northern Ireland make up the UK. Click on an individual UK region to view the total statistics by region. You will notice that the region with the largest fish capture is Scotland! &#9875;" style="font-weight: bold" data-position="right">
-              <div class="chart-title" style="color:blue; font-family: 'Dosis', sans-serif;">
-                Fish by UK region
-              </div>
-              <div class="chart-stage">
-                <div id="region-chart"></div>
-              </div>
-            </div>
-          </div>
-          <!-- pieChart for regions -->
-
-
-                   <!-- Metric 2 for value -->
-      <div class="col-sm-4">
-        <div class="chart-wrapper" data-step="3" data-intro="The shows the total value of fish in £. England has a good value of fish capture with a total of £841 million and does Northern Ireland with £130 million. Wales has the smallest with a modest £78.3 million whereas Scotland has a massive fish value of £1.88 billion. In total the UK captured £2.93 billion pounds worth of fish! &#128026;" style="font-weight: normal" data-position="right">
-          <div class="chart-title" style="color:blue; font-family: 'Dosis', sans-serif;">
-            Total value of fish (million (M) / billion (G))
-          </div>
-          <div class="chart-stage">
-            <div id="total-fish-value"></div>
-          </div>
-        </div>
-      </div>
-       <!--Metric 2 for value -->
-
-          <!-- Metric 3 for value -->
-      <div class="col-sm-4">
-        <div class="chart-wrapper" data-step="4" data-intro="This displays the total quantity of fish in tonnes &#128674 Not surprisingly Scotland has the highest quantity of over 1 billion. The total quantity of fish captured over the 5 year time period is 1,996,100,001 billion!" style="font-weight: normal" data-position="right">
-          <div class="chart-title" style="color:blue; font-family: 'Dosis', sans-serif;">
-            Total quantity of fish (tonnes)
-          </div>
-          <div class="chart-stage">
-            <div id="total-fish-quantity"></div>
-          </div>
-        </div>
-      </div>
-      <!-- Metric 2 for value -->
-            </div>
-        </div>
-      </div>
-
-
- <div class="row">
-      <div class="col-sm-12">
-        <div class="row">
-<!-- pieChart for main regional ports -->
-      <div class="col-sm-4">
-        <div class="chart-wrapper" data-step="5" data-intro="These are the main regional fishing ports for the UK. Newlyn in England, Peterhead in Scotland, Milford Haven in Wales and Belfast in Northern Ireland. All regions have the highest number of fish from the demersal category which includes cod.&#9972;" style="font-weight: normal" data-position="right">
-          <div class="chart-title" style="color:blue; font-family: 'Dosis', sans-serif;">
-            Main regional ports
-          </div>
-          <div class="chart-stage">
-            <div id="port-row-chart"></div>
-          </div>
-        </div>
-      </div>
-      <!-- pieChart for main regional ports -->
-
-
-<!-- rowChart fish types -->
-          <div class="col-sm-4">
-            <div class="chart-wrapper" data-step="6" data-intro="There are three main types of fish. Demersal includes cod, haddock and monkfish. Pelagic includes tuna, herring and mackerel. Lastly shellfish include lobsters, crab and scallops.&#9973;" style="font-weight: normal" data-position="right">
-              <div class="chart-title" style="color:blue; font-family: 'Dosis', sans-serif;">
-                Fish types
-              </div>
-              <div class="chart-stage">
-                <div id="fish-type-row-chart"></div>
-              </div>
-            </div>
-          </div>
-          <!-- rowChart fish types -->
-
-
-
-          <!-- selectMenu for fish name -->
-      <div class="col-sm-4">
-        <div class="chart-wrapper" data-step="7" data-intro="There are many varieties of fish! Cod has a healthy amount caught every year and a total of £146 million pounds worth. Haddocks fairs even better at £215 million at a quantity of 171,500,00 tonnes. The UK has a lower but generous intake of shrimps &#38; prawns from the shellfish category worth £9.70 million. There is a high concentration of pelagic fish herring worth a total of £81.3 million.&#127907;" style="font-weight: normal" data-position="right">
-          <div class="chart-title" style="color:blue; font-family: 'Dosis', sans-serif;">
-            Fish name
-          </div>
-          <div class="chart-stage">
-            <div id="menu-select"></div>
-          </div>
-        </div>
-      </div>
-      <!-- selectMenu for fish name -->
-
-    <button type="button" id="modelButton" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Fish Categories Information</button>
-    <div id="myModal" class="modal fade" role="dialog">
-	<div class="modal-dialog">
-    <div class="modal-content">
-    <div class="modal-header">
-	<button type="button" class="close" data-dismiss="modal">&times;</button>
-	<h4 class="modal-title">Fish Categories</h4>
-	</div>
-		<div class="modal-body">
-            <p><b>Fish - Pelagic:</b> Most of the world's large fish populations are pelagic. They include tuna, herring, mackerel, sardines and anchovy.<br>
-                <b>Fish – Demersal:</b> According to the Scottish Government demersal fish live on or near the seabed and feed on bottom-living organisms and other fish. They include cod, haddock and monkfish.<br>
-                <b>Fish – Shellfish:</b> This includes lobsters, crab and scallops.<br></p>
-
-		            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+        <!-- lineChart -->
 
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="row">
+                    <!-- pieChart for regions -->
+                    <div class="col-sm-4">
+                        <div class="chart-wrapper" data-step="2" data-intro="England, Scotland, Wales and Northern Ireland make up the UK. Click on an individual UK region to view the total statistics by region. You will notice that the region with the largest fish capture is Scotland! &#9875;" style="font-weight: bold" data-position="right">
+                            <div class="chart-title" style="color:blue; font-family: 'Dosis', sans-serif;">
+                                Fish by UK region
+                            </div>
+                            <div class="chart-stage">
+                                <div id="region-chart"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- pieChart for regions -->
 
+                    <!-- Metric 2 for value -->
+                    <div class="col-sm-4">
+                        <div class="chart-wrapper" data-step="3" data-intro="The shows the total value of fish in £. England has a good value of fish capture with a total of £841 million and does Northern Ireland with £130 million. Wales has the smallest with a modest £78.3 million whereas Scotland has a massive fish value of £1.88 billion. In total the UK captured £2.93 billion pounds worth of fish! &#128026;" style="font-weight: normal" data-position="right">
+                            <div class="chart-title" style="color:blue; font-family: 'Dosis', sans-serif;">
+                                Total value of fish (million (M) / billion (G))
+                            </div>
+                            <div class="chart-stage">
+                                <div id="total-fish-value"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Metric 2 for value -->
 
+                    <!-- Metric 3 for value -->
+                    <div class="col-sm-4">
+                        <div class="chart-wrapper" data-step="4" data-intro="This displays the total quantity of fish in tonnes &#128674 Not surprisingly Scotland has the highest quantity of over 1 billion. The total quantity of fish captured over the 5 year time period is 1,996,100,001 billion!" style="font-weight: normal" data-position="right">
+                            <div class="chart-title" style="color:blue; font-family: 'Dosis', sans-serif;">
+                                Total quantity of fish (tonnes)
+                            </div>
+                            <div class="chart-stage">
+                                <div id="total-fish-quantity"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Metric 2 for value -->
+                </div>
+            </div>
+        </div>
 
-  <hr>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="row">
+                    <!-- pieChart for main regional ports -->
+                    <div class="col-sm-4">
+                        <div class="chart-wrapper" data-step="5" data-intro="These are the main regional fishing ports for the UK. Newlyn in England, Peterhead in Scotland, Milford Haven in Wales and Belfast in Northern Ireland. All regions have the highest number of fish from the demersal category which includes cod.&#9972;" style="font-weight: normal" data-position="right">
+                            <div class="chart-title" style="color:blue; font-family: 'Dosis', sans-serif;">
+                                Main regional ports
+                            </div>
+                            <div class="chart-stage">
+                                <div id="port-row-chart"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- pieChart for main regional ports -->
 
-  <div id ="fish"><img src="{{ url_for ('static', filename='svg/si-glyph-fish.svg')}}" /></div>
+                    <!-- rowChart fish types -->
+                    <div class="col-sm-4">
+                        <div class="chart-wrapper" data-step="6" data-intro="There are three main types of fish. Demersal includes cod, haddock and monkfish. Pelagic includes tuna, herring and mackerel. Lastly shellfish include lobsters, crab and scallops.&#9973;" style="font-weight: normal" data-position="right">
+                            <div class="chart-title" style="color:blue; font-family: 'Dosis', sans-serif;">
+                                Fish types
+                            </div>
+                            <div class="chart-stage">
+                                <div id="fish-type-row-chart"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- rowChart fish types -->
 
-  <script src="{{ url_for ('static', filename='lib/js/jquery.min.js')}}"></script>
-  <script src="{{ url_for ('static', filename='lib/js/bootstrap.min.js')}}"></script>
-  <script src="{{ url_for ('static', filename='lib/js/crossfilter.js')}}"></script>
-  <script src="{{ url_for ('static', filename='lib/js/d3.js')}}"></script>
-  <script src="{{ url_for ('static', filename='lib/js/dc.js')}}"></script>
-  <script src="{{ url_for ('static', filename='lib/js/queue.js')}}"></script>
-  <script src="{{ url_for ('static', filename='lib/js/keen.min.js')}}"></script>
-  <script src="{{ url_for ('static', filename='js/graph.js')}}"></script>
-  <script src="{{url_for ('static', filename='lib/js/intro.js')}}" type="text/javascript"></script>
+                    <!-- selectMenu for fish name -->
+                    <div class="col-sm-4">
+                        <div class="chart-wrapper" data-step="7" data-intro="There are many varieties of fish! Cod has a healthy amount caught every year and a total of £146 million pounds worth. Haddocks fairs even better at £215 million at a quantity of 171,500,00 tonnes. The UK has a lower but generous intake of shrimps &#38; prawns from the shellfish category worth £9.70 million. There is a high concentration of pelagic fish herring worth a total of £81.3 million.&#127907;" style="font-weight: normal" data-position="right">
+                            <div class="chart-title" style="color:blue; font-family: 'Dosis', sans-serif;">
+                                Fish name
+                            </div>
+                            <div class="chart-stage">
+                                <div id="menu-select"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- selectMenu for fish name -->
 
+                    <button type="button" id="modelButton" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Fish Categories Information</button>
+                    <div id="myModal" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Fish Categories</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <p><b>Fish - Pelagic:</b> Most of the world's large fish populations are pelagic. They include tuna, herring, mackerel, sardines and anchovy.
+                                        <br>
+                                        <b>Fish – Demersal:</b> According to the Scottish Government demersal fish live on or near the seabed and feed on bottom-living organisms and other fish. They include cod, haddock and monkfish.
+                                        <br>
+                                        <b>Fish – Shellfish:</b> This includes lobsters, crab and scallops.
+                                        <br>
+                                    </p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr>
+
+                <div id="fish"><img src="{{ url_for ('static', filename='svg/si-glyph-fish.svg')}}" /></div>
+
+                <script src="{{ url_for ('static', filename='lib/js/jquery.min.js')}}"></script>
+                <script src="{{ url_for ('static', filename='lib/js/bootstrap.min.js')}}"></script>
+                <script src="{{ url_for ('static', filename='lib/js/crossfilter.js')}}"></script>
+                <script src="{{ url_for ('static', filename='lib/js/d3.js')}}"></script>
+                <script src="{{ url_for ('static', filename='lib/js/dc.js')}}"></script>
+                <script src="{{ url_for ('static', filename='lib/js/queue.js')}}"></script>
+                <script src="{{ url_for ('static', filename='lib/js/keen.min.js')}}"></script>
+                <script src="{{ url_for ('static', filename='js/graph.js')}}"></script>
+                <script src="{{url_for ('static', filename='lib/js/intro.js')}}" type="text/javascript"></script>
 
 </body>
+
 </html>

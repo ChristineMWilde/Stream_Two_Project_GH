@@ -6,17 +6,16 @@ import json
 
 app = Flask(__name__)
 
+
 #MONGODB_HOST = 'localhost'
 #MONGODB_PORT = 27017
 #DBS_NAME = 'fishingUK'
 #COLLECTION_NAME = 'projects'
 #need to update fishing_quotas.py with the mongo URI
 
-MONGO_URI = os.getenv('MONGO_URI', 'mongodb://localhost:27017')
+MONGO_URI = os.getenv('MONGODB_URI', 'mongodb://localhost:27017')
 DBS_NAME = os.getenv('MONGO_DB_NAME', 'fishingUK')
 COLLECTION_NAME = 'projects'
-
-
 
 
 @app.route("/")

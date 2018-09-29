@@ -1,12 +1,12 @@
 
 # Christine Wilde's Stream Two Project
 
-Please note the entire project is described under the "project2_documentation" folder in the word document named FinalProjectStreamTwo.doc.
+Please note the entire project is described under the "Documentation for project" folder in the word document named FinalProjectStreamTwo.doc.
 
 The goal of the stream two project is to build a front and backend Website that pulls data from a database and presents the data in a well presented graphical format using technologies such as Python, D3.js and DC.js.
 
 Project subject:
-The UK fishing industry and the quota restrictions that UK currently abides to via the EU fishing laws in EU waters is the subject that was chosen.  One of the key mechanisms to control fishing due to fear of ‘over-fishing’ is to implement a fishing quota on nations. The aim here was to analyse the UK fishing industry statistics over a 5 year stretch and show this on well presented dashboard. 
+The subject chosen is the UK fishing industry and the quota restrictions that the UK currently abides to via the EU fishing laws in EU waters.  One of the key mechanisms to control fishing due to fear of ‘over-fishing’ is to implement a fishing quota on nations. The aim here was to analyse the UK fishing industry statistics over a 5 year stretch and show this on well presented dashboard. 
 
 The Website includes the following technologies:
 
@@ -39,8 +39,23 @@ The fish name select menu was an important feature to answer the project questio
 6. ## A tour button
 This takes the user through the individual charts providing a short explanation of each one.
 
+### Installation
 
-TESTING observations:
+The below table explains how to deploy the application.
+
+
+
+```sh
+
+1. For the live version please go to the Heroku deployed app at: https://ancient-depths-24629.herokuapp.com/
+2. To run locally download all files from https://github.com/ChristineMWilde/Stream_Two_Project_GH. 
+
+3. All requirements are found in the requirements.txt file. 
+4. The project can be open and run using the Pycharm application.
+4. Please read "FinalProjectStreamTwo.doc" for detailed information on this project. This document is found under the folder "Documentation for project" folder
+```
+
+###TESTING observations:
 
   * No spaces in the file should be present when importing a .csv data file to Mongo DB! 
   

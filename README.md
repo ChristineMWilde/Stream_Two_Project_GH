@@ -48,14 +48,13 @@ The below table explains how to deploy the application.
 ```sh
 
 1. For the live version please go to the Heroku deployed app at: https://ancient-depths-24629.herokuapp.com/
-2. To run locally download all files from https://github.com/ChristineMWilde/Stream_Two_Project_GH. 
-
-3. All requirements are found in the requirements.txt file. 
+2. To run locally download all files from https://github.com/ChristineMWilde/Stream_Two_Project_GH.
+3. All requirements are found in the requirements.txt file.
 4. The project can be open and run using the Pycharm application.
-4. Please read "FinalProjectStreamTwo.doc" for detailed information on this project. This document is found under the folder "Documentation for project" folder
+5. Please read "FinalProjectStreamTwo.doc" for detailed information on this project. This document is found under the folder "Documentation for project" folder
 ```
 
-###TESTING observations:
+### TESTING observations:
 
   * No spaces in the file should be present when importing a .csv data file to Mongo DB! 
   
